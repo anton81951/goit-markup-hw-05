@@ -818,7 +818,7 @@ input, textarea {
     margin-right: 8px;
 }
 
-.modal-checkbox:checked .modal-checkbox-label-span {
+input[type="checkbox"]:checked .modal-checkbox-label-span {
     background-color: #404bbf;
     border: none;
     fill: #F4F4FD;
