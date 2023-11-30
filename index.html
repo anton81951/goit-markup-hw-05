@@ -365,7 +365,7 @@
                 </div>
             </div>
         </footer>
-        <div class="modal-shadow">
+        <div class="modal-shadow is-open">
             <div class="modal-ground">
                 <button type="button" class="modal-button">
                     <svg width="24" height="24" class="modal-close-icon"><use href="./images/icons.svg#icon-close"></use></svg>
@@ -375,22 +375,22 @@
                     <div class="modal-form-first">
                         <label class="modal-label-style" for="user-name">Name</label>
                         <div class="modal-input-and-icon">
-                            <input id="user-name" type="text" name="user-name" class="modal-input-style">
-                            <svg width="18" height="24" class="modal-input-icon-style"><use href="./images/icons.svg#icon-person-form"></use></svg>
+                            <input id="user-name" type="text" name="user-name" class="modal-input-style" pattern="[a-zA-Zа-яА-ЯіІїЇєЄґҐʼ]+" title="Anton" required>
+                            <svg width="18" height="24" class="modal-input-icon-style" aria-label="icon name"><use href="./images/icons.svg#icon-person-form"></use></svg>
                         </div>
                     </div>
                     <div class="modal-form-first">
                         <label class="modal-label-style" for="user-email">Phone</label>
                         <div class="modal-input-and-icon">
-                            <input id="user-phone" type="text" name="user-phone" class="modal-input-style">
-                            <svg width="18" height="24" class="modal-input-icon-style"><use href="./images/icons.svg#icon-phone"></use></svg>
+                            <input id="user-phone" type="tel" name="user-phone" class="modal-input-style" pattern="[0-9]+" title="0-9" required>
+                            <svg width="18" height="24" class="modal-input-icon-style" aria-label="icon phone"><use href="./images/icons.svg#icon-phone"></use></svg>
                         </div>
                     </div>
                     <div class="modal-form-first">
                         <label class="modal-label-style" for="user-email">Email</label>
                         <div class="modal-input-and-icon">
-                            <input id="user-email" type="text" name="user-email" class="modal-input-style">
-                            <svg width="18" height="24" class="modal-input-icon-style"><use href="./images/icons.svg#icon-email"></use></svg>
+                            <input id="user-email" type="email" name="user-email" class="modal-input-style" required>
+                            <svg width="18" height="24" class="modal-input-icon-style" aria-label="icon email"><use href="./images/icons.svg#icon-email"></use></svg>
                         </div>
                     </div>
                     <div class="modal-comment-block">
@@ -398,7 +398,7 @@
                         <textarea  class="modal-comment-field" name="user-comment" id="user-comment" placeholder="Text input"></textarea>
                     </div>
                     <div class="modal-checkbox-container">
-                        <input class="modal-checkbox visually-hidden" type="checkbox" id="user-privacy" value="true" name="user-privacy">
+                        <input class="modal-checkbox visually-hidden" type="checkbox" id="user-privacy" value="true" name="user-privacy" required>
                         <label class="modal-checkbox-label" for="user-privacy"><span class="modal-checkbox-label-span">
                             <svg width="16" height="16" class="modal-checkbox-icon"><use href="./images/icons.svg#icon-checkbox"></use></svg>
                         </span>I accept the terms and conditions of the <a class="modal-privacy-policy-style" href="">Privacy Policy</a>
