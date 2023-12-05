@@ -43,10 +43,11 @@ img {
 input, textarea {
     font-family: inherit;
     font-size: inherit;
-  }
+}
 
 .container {
-    width: 1158px;
+    min-width: 320px;
+    max-width: 1158px;
     margin: 0 auto;
     padding: 0 15px;
 }
@@ -77,6 +78,7 @@ input, textarea {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    position: relative;
 }
 
 .logo-and-menu {
@@ -88,6 +90,7 @@ input, textarea {
     display: flex;
     gap: 40px;
     position: relative;
+    margin-right: 120px;
 }
 
 .text-in-menu {
@@ -137,10 +140,76 @@ input, textarea {
 .contact {
     display: flex;
     gap: 40px;
+    flex-wrap: wrap;
 }
 
 .contact-item {
     width: calc((100% - 40px) / 2);
+    white-space: nowrap;
+}
+
+.menu-pie {
+    fill: #2F2F37;
+    position: absolute;
+    right: 16px;
+    top: 16px;
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+}
+
+@media (min-width: 320px) and (max-width: 767px) {
+
+    .logo-and-menu {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        margin: 16px 0;
+    }
+
+    .menu {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        border: 0;
+        padding: 0;
+        
+        white-space: nowrap;
+        clip-path: inset(100%);
+        clip: rect(0 0 0 0);
+        overflow: hidden;
+    }
+
+    .contact {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        border: 0;
+        padding: 0;
+        
+        white-space: nowrap;
+        clip-path: inset(100%);
+        clip: rect(0 0 0 0);
+        overflow: hidden;
+    }
+
+    .menu-pie {
+        visibility: visible;
+        opacity: 1;
+        pointer-events: auto;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1157px) {
+    .contact {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+
+    }
 }
 
 /* logo in header and footer */
@@ -203,10 +272,8 @@ input, textarea {
     text-decoration: underline;
 }
 
+
 /* boxes for the first section */
-.section {
-    padding: 120px 0;
-}
 
 .style-first-section {
     background-image: linear-gradient(
@@ -217,14 +284,26 @@ input, textarea {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+    min-width: 320px;
     max-width: 1440px;
     background-position: center;
     margin: 0 auto;
 }
 
+@media (min-resolution: 192dpi) {
+    .style-first-section {
+        background-image: linear-gradient(
+            to bottom, 
+            rgba(46, 47, 66, 0.7), 
+            rgba(46, 47, 66, 0.7)), 
+            url(../images/office_laptops2x.jpg);
+    }
+}
+
 .style-first-section .container {
     padding: 188px 0;
-    
+    min-width: 320px;
+    max-width: 1158px;
 }
 
 .style-first-section .container {
@@ -237,11 +316,34 @@ input, textarea {
     position: relative;
 }
 
+.title-header {
+    color: white;
+    font-size: 56px;
+    font-weight: 700;
+    line-height: 1.07;
+    letter-spacing: 0.02em;
+    text-align: center;
+    margin-bottom: 48px;
+    max-width: 496px;
+}
 
+@media (min-width: 319px) and (max-width: 767px) {
+    .style-first-section .container {
+        padding: 72px 0;
+    }
 
-
+    .title-header {
+        color: white;
+        font-size: 36px;
+        line-height: 1.11;
+        max-width: 288px;
+    }
+}
 
 /* boxes for the second section list of values */
+.section {
+    padding: 120px 0;
+}
 
 .list-of-values {
     display: flex;
@@ -264,12 +366,88 @@ input, textarea {
     height: 112px;
 }
 
-/* boxes for the third section our team */
+@media (min-width: 320px) and (max-width: 767px) {
 
-.box-third-section {
-    align-items: center;
-    gap: 72px;
+    .section {
+        padding: 0;
+    }
+
+    .section .container {
+        padding: 96px 16px;
+    }
+
+    .list-of-values {
+        flex-direction: column;
+        gap: 72px;
+        align-items: center;
+    }
+
+    .values-item {
+        width: auto;
+    }
+
+    .box-icon-values {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        border: 0;
+        padding: 0;
+        
+        white-space: nowrap;
+        clip-path: inset(100%);
+        clip: rect(0 0 0 0);
+        overflow: hidden;
+    }
+
+    .values-item .header-in-section {
+        text-align: center;
+        font-size: 36px;
+        font-weight: 700;
+        line-height: 1.11;
+        letter-spacing: 0.02em;
+    } 
 }
+
+@media (min-width: 768px) and (max-width: 1157px) {
+
+    .list-of-values {
+        flex-wrap: wrap;
+        row-gap: 72px;
+        column-gap: 24px;
+    }
+
+    .box-icon-values {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        border: 0;
+        padding: 0;
+        
+        white-space: nowrap;
+        clip-path: inset(100%);
+        clip: rect(0 0 0 0);
+        overflow: hidden;
+    }
+
+    .values-item {
+        min-width: 356px;
+    }
+
+    .values-item .header-in-section {
+        
+            color: #2e2f42;
+            font-size: 36px;
+            font-weight: 700;
+            line-height: 1.11;
+            letter-spacing: 0.02em;
+            margin-bottom: 8px;
+        
+    }
+}
+
+/* boxes for the third section our team */
 
 .style-third-section-title {
     margin-bottom: 72px;
@@ -350,6 +528,34 @@ input, textarea {
     text-align: center;
 }
 
+@media (min-width: 320px) and (max-width: 767px) {
+
+    .team-members-list {
+        display: flex;
+        flex-direction: column;
+        gap: 72px;
+        align-items: center;
+    }
+
+    .team-member-item {
+        width: 264px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1157px) {
+    .team-members-list {
+        display: flex;
+        flex-wrap: wrap;
+        column-gap: 24px;
+        row-gap: 64px;
+        margin: 0 108px;
+    }
+
+    .team-member-item {
+        width: calc((100% - 24px) / 2);
+    }
+}
+
 /* boxes for the fourth section */
 
 .box-fourth-section {
@@ -402,8 +608,6 @@ input, textarea {
     transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-
-
 .card-list-item:hover .card-list-image-overlay {
     transform: translatey(0);
 }
@@ -412,6 +616,38 @@ input, textarea {
     border: 1px #E7E9FC solid;
     border-top: none;
     padding: 32px 16px; 
+}
+
+@media (min-width: 320px) and (max-width: 767px) {
+
+    .portfolio-cards-list {
+        display: flex;
+        flex-direction: column;
+        gap: 48px;
+        align-items: center;
+    }
+
+    .card-list-item {
+        overflow: hidden;
+        width: 288px;
+        box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08);
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1157px) {
+    .portfolio-cards-list {
+        display: flex;
+        flex-wrap: wrap;
+        column-gap: 24px;
+        row-gap: 72px;
+        align-items: center;
+    }
+
+    .card-list-item {
+        overflow: hidden;
+        width: 356px;
+        box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08);
+    }
 }
 
 /* boxes for footer */
@@ -501,10 +737,15 @@ input, textarea {
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
     border-radius: 4px;
     color: #ffffff;
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .email-field-footer::placeholder {
     color: #ffffff;
+}
+
+.email-field-footer:focus {
+    border-color: #4D5AE5;
 }
 
 .button-subscribe-footer {
@@ -531,18 +772,81 @@ input, textarea {
 
 }
 
+@media (min-width: 320px) and (max-width: 767px) {
+    .footer-ordering {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0 16px;
+        margin: 0 auto;
+    }
+
+    .footer-first-box {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin:0 0 72px 0;
+        
+    }
+
+    .bottom-logo {
+        margin: 0;
+        align-self: center;
+        margin-bottom: 16px;
+    }
+
+    .footer-social-media {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 72px;
+    }
+
+    .footer-social-media-line {
+        margin-right: 0;
+    }
+
+    .footer-subscribe-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .form-bottom {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+    }
+
+    .button-subscribe-footer {
+        max-width: 165px;
+    }
+
+}
+
+@media (min-width: 768px) and (max-width: 1157px) {
+    .footer-ordering {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        align-content: center;
+        row-gap: 72px;
+        column-gap: 24px;
+        margin-left: 93px;
+    }
+
+    .footer-first-box {
+        margin-right: 0;
+    }
+
+    .footer-social-media-line {
+        margin-right: 0;
+    }
+}
 
 /* different texts in sections */
-.title-header {
-    color: white;
-    font-size: 56px;
-    font-weight: 700;
-    line-height: 1.07;
-    letter-spacing: 0.02em;
-    text-align: center;
-    margin-bottom: 48px;
-    max-width: 496px;
-}
+
 
 .section-title{
     color: #2e2f42;
@@ -646,6 +950,94 @@ input, textarea {
     clip: rect(0 0 0 0);
     overflow: hidden;
 }
+
+/* menu pie */
+
+.menu-modal-main {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 882px;
+    background-color: white;
+}
+
+.menu-modal-nav-position {
+    position: absolute;
+    top: 72px;
+    left: 16px;
+}
+
+.menu-modal-list {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    justify-content: flex-start;
+    position: relative;
+}
+
+.menu-modal-item {
+    color: #2E2F42;
+    font-size: 36px;
+    font-weight: 700;
+    text-transform: capitalize;
+    line-height: 40px;
+    letter-spacing: 0.72px;
+    word-wrap: break-word;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1); 
+}
+
+.menu-modal-item:hover, 
+.menu-modal-item:focus, 
+.menu-modal-item:active {
+    color: #404BBF;
+}
+
+.menu-modal-contact-socials {
+    position: absolute;
+    left: 16px;
+    bottom: 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-modal-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin-bottom: 48px;
+}
+
+.menue-modal-text-for-contact {
+    color: #434455;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1.2;
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.menue-modal-text-for-contact:hover,
+.menue-modal-text-for-contact:focus {
+    color: #404BBF;
+}
+
+.menu-modal-team-member-socials {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+
+}
+
+.team-socails-back {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+}
+
 
 /* form modal */
 
@@ -858,5 +1250,25 @@ input[type="checkbox"]:checked + label > .modal-checkbox-label-span {
 
 .modal-send-button:focus, .modal-send-button:hover {
     background-color: #404BBF;
+}
+
+@media (min-width: 320px) and (max-width: 767px) {
+    .modal-ground {
+        width: 288px;
+        top: 8px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .modal-button {
+        background-color: white;
+    }
+
+    .modal-checkbox-label {
+        display: flex;
+        align-items: center;
+
+    }
+
 }
 
